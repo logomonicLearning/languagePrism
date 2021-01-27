@@ -1,0 +1,136 @@
+/*MAIN */
+:root{
+	/*--pris-height:100%;*/
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+html {
+	height:100%; 
+}
+
+body {
+	font-size: 40px;
+	background: rgba(0, 0, 0, 0.86);
+	min-height:100%;
+}
+
+
+
+.container{
+	width: 90vw;
+	position: relative;
+	height: 50vh;
+	padding:/* 18px */;
+	margin:auto;
+	top: 20vh;
+	background: linear-gradient(180deg, #129fea, #129fea91);
+	perspective:500px;
+	display:grid;
+	grid-template-rows: 2fr 2fr 1fr;
+	grid-template-columns: 15vw  60vw 15vw;
+	grid-template-areas: 
+		'left prism right'      
+		'left prism right'      
+		'ctrl  ctrl ctrl';
+}
+
+
+
+
+/*BUTTONS*/
+.btn-container, .btns-container, .btns-wrapper{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.btn-container:nth-child(1){
+	grid-area:left;
+	justify-content: flex-end;
+}
+
+.btn-container:nth-child(2){
+	grid-area:right;
+	justify-content: flex-start;
+}
+
+
+.btns-container{
+	grid-area:ctrl; 
+}
+
+.button-small {
+	font-size: 50%;
+	padding: 6px;
+}
+
+.button-side{
+	height: 80%;
+}
+
+
+
+
+
+/*PRISM*/
+
+#prism-container, .prism-wrapper{
+	transform-style:preserve-3d;
+	height: 100%;
+	grid-area:prism;
+	transition: all 0.5s ease;
+	margin:auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin:auto;
+}
+
+
+.side{
+	width: 219px;
+	height: 75%;
+	position:absolute;
+	text-align: center;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;  
+	align-items:center;
+
+}
+
+.chinese-side{
+	transform:translateZ(63.5px);
+	background: #4C996B;
+	font-size: 3.2rem;
+	font-weight: bolder;
+}
+
+.english-side{
+	background: #6F4D8F;
+	transform:rotateY(-120deg) translateZ(63.5px);
+}
+
+.pinyin-side{
+	background: #D4CF6A;
+	transform:rotateY(120deg) translateZ(63.5px);
+}
+
+
+.english{
+	transform:rotateY(120deg);  
+}
+
+.chinese{
+	transform:rotateY(0deg);
+}
+
+.pinyin{
+	transform:rotateY(-120deg);
+}
+
